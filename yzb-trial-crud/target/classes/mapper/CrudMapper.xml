@@ -4,4 +4,16 @@
     <select id="getAllMembers" resultType="com.yzblike.model.Member">
         select * from members
     </select>
+
+    <select id="getMemberById" parameterType="java.lang.Integer" resultType="com.yzblike.model.Member">
+        select * from members where id=#{id}
+    </select>
+
+    <select id="getMembersByPage" resultType="com.yzblike.model.Member">
+        select * from members_many limit #{start},#{pageSize}
+    </select>
+
+    <select id="getMembersCount" resultType="java.lang.Integer">
+        select count(*) from members_many
+    </select>
 </mapper>

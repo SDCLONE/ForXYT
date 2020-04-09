@@ -19,4 +19,19 @@ public class CrudServiceImpl implements CrudService {
     public List<Member> getAllMembers() {
         return crudMapper.getAllMembers();
     }
+
+    @Override
+    public Member getMemberById(int id) {
+        return crudMapper.getMemberById(id);
+    }
+
+    @Override
+    public List<Member> getMembersByPage(int page, int pageSize) {
+        return crudMapper.getMembersByPage((page-1)*pageSize,pageSize);
+    }
+
+    @Override
+    public int getMembersCount() {
+        return crudMapper.getMembersCount();
+    }
 }
